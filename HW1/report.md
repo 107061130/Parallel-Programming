@@ -20,10 +20,10 @@ float* data = (float*)malloc(data_size * sizeof(float));
 1. 在odd-even phase時，**資料由單向傳輸改為雙向**，節省了3k的時間(k = N/m)
 
 Before
-![](https://hackmd.io/_uploads/HJ0h0qRZ6.png)
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/512b99a5-626c-4ad6-a6cd-319e69a19ce1)
 
 After
-![](https://hackmd.io/_uploads/Skk-yo0W6.png)
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/d018092c-1b0c-4389-9387-3d90a9a1a4ca)
 
 2. Quick sort to **boost::spreadsort**(good performance on large size floating point array)
 3. 在送資料之前，**先互送一筆data確認是否sort過了**，如果**process i的尾**已經小於等於**process i+1的頭**，那就沒必要傳送資料了。這個做法會導致小測資時間增加，但在大測資上會有微小進步
