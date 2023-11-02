@@ -97,9 +97,13 @@ if (rank == 0) {
 /share/data/.testcases/hw1/38.in, contains 536831999 number
 * Parallel Configurations
 1 Node, Process = {1,2,4,6,8,10,12}
-![](https://hackmd.io/_uploads/By85fIMMT.png)
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/d125ed8c-265d-4d09-a690-67eaf2d11919)
+
+
 3 Nodes, Process = {1,2,4,6,8,10,12}
-![](https://hackmd.io/_uploads/BkVSIUMfp.png)
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/bc310004-f1f9-4984-a556-48390ea81f9b)
+
+
 
 #### Performance Measurement
 1. CPU: cpu times, basicly is Total time - Communication time - File I/O time
@@ -108,8 +112,8 @@ if (rank == 0) {
 4. FILE_OPEN_CLOSE: MPI_File_open/close() for input & output file
 
 #### Analysis of Results
-![](https://hackmd.io/_uploads/H1sMnIfMa.png)
-![](https://hackmd.io/_uploads/Hy4X3Izfp.png)
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/9a3589e0-d921-4893-b136-a922e4c3eea6)
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/1b97b968-e457-4724-8247-f34e2abd8e7e)
 1. 可以看到當process數上升，I/O變成Bottleneck，但是I/O的時間其實有上限，並不會隨著Process數增加而上升
 2. 我本來預期FILE_READ_WRITE的時間會隨著process數增加而減少，因為每個process要寫的資料變少，而且我採用的是Independent I/O，但結果顯示就算是Independent I/O，還是會互相衝突
 3. 可以看到不管是Single Node或3 Nodes，10個process表現都是最好的，雖然增加process可以減少CPU time，但卻會增加Commnunication time
@@ -117,8 +121,10 @@ if (rank == 0) {
 
 ---
 
-![](https://hackmd.io/_uploads/B1-UpLMG6.png)
-![](https://hackmd.io/_uploads/HkFFa8Mfa.png)
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/285aa4c3-3076-4192-8f72-03fd0178269b)
+
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/052a6e8a-6da7-4815-9223-df020e89b141)
+
 1. 可以看到不管single或3 node，strong scability都非常差，最多只到2
 2. 原因是因為I/O才是Bottleneck，以及Communication time會隨著process num增加而稱加，如果單看CPU time，strong scability是理想的
 
