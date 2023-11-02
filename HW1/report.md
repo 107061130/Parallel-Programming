@@ -101,7 +101,7 @@ if (rank == 0) {
 
 
 3 Nodes, Process = {1,2,4,6,8,10,12}
-![image](https://github.com/107061130/Parallel-Programming/assets/79574369/bc310004-f1f9-4984-a556-48390ea81f9b)
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/285aa4c3-3076-4192-8f72-03fd0178269b)
 
 
 
@@ -121,8 +121,7 @@ if (rank == 0) {
 
 ---
 
-![image](https://github.com/107061130/Parallel-Programming/assets/79574369/285aa4c3-3076-4192-8f72-03fd0178269b)
-
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/bc310004-f1f9-4984-a556-48390ea81f9b)
 ![image](https://github.com/107061130/Parallel-Programming/assets/79574369/052a6e8a-6da7-4815-9223-df020e89b141)
 
 1. 可以看到不管single或3 node，strong scability都非常差，最多只到2
