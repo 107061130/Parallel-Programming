@@ -97,10 +97,12 @@ if (rank == 0) {
 /share/data/.testcases/hw1/38.in, contains 536831999 number
 * Parallel Configurations
 1 Node, Process = {1,2,4,6,8,10,12}
+
 ![image](https://github.com/107061130/Parallel-Programming/assets/79574369/d125ed8c-265d-4d09-a690-67eaf2d11919)
 
 
 3 Nodes, Process = {1,2,4,6,8,10,12}
+
 ![image](https://github.com/107061130/Parallel-Programming/assets/79574369/285aa4c3-3076-4192-8f72-03fd0178269b)
 
 
