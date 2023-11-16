@@ -11,9 +11,6 @@
 #include <pthread.h>
 #include <smmintrin.h>
 #include <math.h>
-#define threshold1 1e-3
-#define threshold2 1e-4
-#define min(a, b) (a < b ? a : b)
 
 void* task(void* threadid);
 void write_png(const char* filename, int iters, int width, int height, const int* buffer);
