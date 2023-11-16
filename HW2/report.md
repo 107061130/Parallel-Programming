@@ -3,7 +3,7 @@
 ---
 ## Implementation
 ### How do you partition the task?
-I apply static allocation in both pthread and hybrid versions. I use hashing strategy to assign pixels to a thread. For example, *thread i* will handle indexes that mod *thread num* = *i*. Below figure shows how it works.
+I apply static allocation in both pthread and hybrid versions. I use hashing strategy to assign pixels to a thread. For example, *thread i* will handle indexes that mod *thread num* = *i*. Below figure shows how it works.   
 
 (*process id*, *thread id*)
 ![image](https://github.com/107061130/Parallel-Programming/assets/79574369/3807d634-f905-45c5-b193-65d871d1a0d5)
