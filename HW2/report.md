@@ -13,11 +13,11 @@ I found that this partition can achieve good load balancing becasue height * wid
 
 pthread
 ```
-for (int i = *tid; i < height; j += ncpus)
+for (int i = *tid; i < height*width; i += ncpus)
 ```
 hybrid
 ```
-for (int i = *tid + rank*ncpus; i < height; i += size*ncpus)
+for (int i = *tid + rank*ncpus; i < height*width; i += size*ncpus)
 ```
 
 ### What technique do you use to reduce execution time and increase scalability?
