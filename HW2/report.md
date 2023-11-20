@@ -72,7 +72,6 @@ Use MPI_Wtime() to compute the CPU, IO and Communication time
 * Parallel Configurations
 1 Node, Process = {1,2,4,6,8,10,12}
 ![image](https://github.com/107061130/Parallel-Programming/assets/79574369/8009d279-d41a-4eb4-943c-e54d44592fc7)
-
 3 Nodes, Process = {1,2,4,6,8,10,12}
 ![image](https://github.com/107061130/Parallel-Programming/assets/79574369/5f10bf95-ae24-44b5-a334-bad88cc3fc91)
 
