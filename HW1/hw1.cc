@@ -10,8 +10,8 @@
 #define min(a, b) (a < b ? a : b)
 #define swap(type, a, b) {type c = a; a = b; b = c;}
 
-inline void Merge_min(float* arr1, float* arr2, const int len1, const int len2, float* temp);
-inline void Merge_max(float* arr1, float* arr2, const int len1, const int len2, float* temp);
+void Merge_min(float* arr1, float* arr2, const int len1, const int len2, float* temp);
+void Merge_max(float* arr1, float* arr2, const int len1, const int len2, float* temp);
 
 int main(int argc, char** argv)
 {
@@ -112,7 +112,7 @@ int main(int argc, char** argv)
     return 0;
 }
 
-inline void Merge_min(float* arr1, float* arr2, const int len1, const int len2, float* temp) {
+void Merge_min(float* arr1, float* arr2, const int len1, const int len2, float* temp) {
     int i = 0, j = 0, k = 0;
     while(k < len1 - 1) {
         if (arr1[i] <= arr2[j]) temp[k++] = arr1[i++];
@@ -121,7 +121,7 @@ inline void Merge_min(float* arr1, float* arr2, const int len1, const int len2, 
     temp[k] = (j == len2 ? arr1[i] : min(arr1[i], arr2[j]));
 }
 
-inline void Merge_max(float* arr1, float* arr2, const int len1, const int len2, float* temp) {
+void Merge_max(float* arr1, float* arr2, const int len1, const int len2, float* temp) {
     int i = len1 - 1, j = len2 - 1, k = len1 - 1;
     while(k >= 0) {
         if (arr1[i] > arr2[j]) temp[k--] = arr1[i--];
