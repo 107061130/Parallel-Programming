@@ -99,8 +99,8 @@ Bolcking Factor (a, b) means  a x a threads handle b x b region
 | integer instruction | 4273248256 | 7431945280 | 1.3325e+10 |
 | time                | 9.923s     | 4.826s     | 4.215s     |
 
-![image](https://hackmd.io/_uploads/SkikuX3U6.png)
-![image](https://hackmd.io/_uploads/HyNqum38T.png)
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/23d7d7c6-9c26-4ac2-8627-bc338a74c267)
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/3123d6ac-a7a9-4696-8550-29ee20ad4475)
 
 * 以時間來看，Bolcking Factor = (32, 64)的表現最好
 * integer instruction也是(32, 64)最高，代表GPU被用於計算的地方越多
@@ -183,7 +183,7 @@ printf("half N = %d / n = %d\n", N, n);
 | Relative Time  | 1     | 1.25         |
 | Speedup        | 1     | 1.6 (2/1.25) |
 
-![image](https://hackmd.io/_uploads/HkBtmyo8T.png)
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/c149d0b2-3e0c-4b9c-8c85-96df29a31bb4)
 
 ### Time Distribution
 Bottleneck is Computing time
@@ -193,8 +193,7 @@ Bottleneck is Computing time
 | I/O        | 0.99  | 1.85  | 3.59  | 5.09  | 7.35  |
 | Cudamemcpy | 0.3   | 0.66  | 0.9   | 2.05  | 6.43  |
 
-![image](https://hackmd.io/_uploads/SJWphzoIT.png)
-
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/35a1a9d9-0fc3-4b1d-935a-7228dfe64bbb)
 
 
 ## Experience & conclusion
