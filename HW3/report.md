@@ -6,7 +6,7 @@
 BLOCKED FLOYD-WARSHALL ALGORITHM，用openmp對for loop做平行運算
 
 2. How do you divide your data in hw3-2, hw3-3?
-![image](https://hackmd.io/_uploads/BkALJ5t8T.png)
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/dd99bc60-9835-462d-9ffa-99a009c00522)
 按照BLOCKED FLOYD-WARSHALL ALGORITHM的流程切Block，一個Block大小為64x64，若n無法被64整除，就padding成64的倍數並存在N
     ```
     if (n % BLOCK_SIZE == 0) N = n;
@@ -18,7 +18,7 @@ BLOCKED FLOYD-WARSHALL ALGORITHM，用openmp對for loop做平行運算
     * 一個Block開32 x 32個threads (thread limit = 1024)
     * 這32 x 32threads會處理大小為64 x 64的Region (因為shared memor limit = 64 x 64 x 3 bytes)
     * 一個thread會處理四格(如下圖)，分別處理(thread.idx, thread,idy)在4個32 x 32的Region對應的位置，至於為何這樣分配後面**Optimization**的部分會講
-![image](https://hackmd.io/_uploads/BJ9q4qF8a.png)
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/beef9f2b-9129-436e-b6a6-d70403748576)
     * 下圖為各個Phase的Block數
         ```
         const int round = N / BLOCK_SIZE;
@@ -36,7 +36,7 @@ BLOCKED FLOYD-WARSHALL ALGORITHM，用openmp對for loop做平行運算
     * 一台GPU負責一半的Row
     * 進迴圈之前，先把一半的Host Dist copy進Device dst
     * 之後每一round，都只需要把current round的row copy到device就好，因為device在ith round中，只需用到current round row的資料，下圖舉device1為例，在ith round只需知道到黃色部分的資料就可完成phase1, 2, 3的計算。
-    ![image](https://hackmd.io/_uploads/rkv30oKUT.png)
+    ![image](https://github.com/107061130/Parallel-Programming/assets/79574369/52cd22ee-d1b2-4c27-84c0-ace7d17cfe20)
     * 最後分別把自己那半copy回Host Dist即可
 
 ## Profiling Results (hw3-2)
