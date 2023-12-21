@@ -109,10 +109,10 @@ Bolcking Factor (a, b) means  a x a threads handle b x b region
 
 ### Optimization 
 我用32 x 32個threads去處理64 x 64的區域，每個threads負責的格子如下圖，這樣分配可以達到Larger blocking factor, Coalesced memory access以及Reduce Bank Conflict
-![image](https://hackmd.io/_uploads/BJ9q4qF8a.png)
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/beef9f2b-9129-436e-b6a6-d70403748576)
 * Coalesced memory access
 如下圖所示，這樣分配可以讓同個wrap讀的記憶體位置是連續的
-![image](https://hackmd.io/_uploads/r18HeR5UT.png)
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/07a9d0e7-9fa5-451b-bb47-ec7993567dc2)
 * Reduce Bank Conflict
 從下方的程式可以看出，在round k，因為同一個wrap都在同一列，所以都會需要相同ROW[i][k]以及不同COL[k][j] (COL[k][j], COL[k][j+1], .... COL[k][j+31])。因此COL的部分不會有Bank Conflict，而ROW的部分可以透過Broadast
     ```
@@ -158,7 +158,7 @@ Read
 
 *  Asynchronous Copy from Global Memory to Shared Memory
 如下圖， __pipeline_memcpy_async() 不用經過L1及Register就可以直接寫到shared_memory
-![image](https://hackmd.io/_uploads/ryBmv1nIT.png)
+![image](https://github.com/107061130/Parallel-Programming/assets/79574369/731f34ac-1af4-4332-9da3-f19a9cb82197)
 但我實測下來沒有很大的進步
  
 
